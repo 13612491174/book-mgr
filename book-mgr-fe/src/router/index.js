@@ -13,15 +13,12 @@ const routes = [
 	  name: 'BasicLayout',
 	  component: () => import(/* webpackChunkName: "BasicLayout" */ '../layout/BasicLayout/index.vue'),
 		
-		childern: [
-			{
-				path: 'books',
-				name: 'Books',
-				component: () => import(/* webpackChunkName: "Books" */ '../views/Books/index.vue'),
-			},
-			
-			
-			
+		children: [
+      {
+        path: '/books',
+        name: 'Books',
+        component: () => import(/* webpackChunkName: "Books" */ '../views/Books/index.vue'),
+      },
 		],
 		
 	},

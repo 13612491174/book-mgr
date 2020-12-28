@@ -1,8 +1,8 @@
 .basic-layout{
 	
-	.app-header-placeholder {
-		height: 64px;
-		width: 100%;
+	.app-header-placeholder{
+		height:64px;
+		width:100%;
 	}
 	
 	.app-header{
@@ -57,25 +57,26 @@
 		
 	}
 	
+	
 	.app-content{
-		display:flex;
+		display: flex;
 		
 		.left{
 			width:256px;
-			background-color:#efefef;
-			 position: fixed;
-			 top:64px;
-			 bottom: 0;
+			background-color:#efef;
+			position:fixed;
+			top: 64px;
+			bottom: 0;
 		}
 		
-		.right {
+		.right{
 			flex:1;
 			padding:24px;
-			margin-left:256px
+			margin-left: 256px;
 		}
-		
 		
 		
 	}
 	
 }
+

@@ -24,14 +24,12 @@
 		<div class="app-header-placeholder"></div>
 		
 		<div class="app-content">
-		  <div class="left">
-			<app-nav />
-		  </div>
-		  
-		  <div class="right">
-			<router-view />
-		  </div>
-		  
+			<div class="left">
+				<app-nav />
+			</div>
+			<div class="right">
+				<router-view />
+			</div>
 		</div>
 	</div>
 </template>
