@@ -9,13 +9,13 @@ import { result } from '@/helpers/utils';
 import {message} from 'ant-design-vue'
 
 export default defineComponent({
-	
+
 	components:{
-		UserOutlined, 
+		UserOutlined,
 		LockOutlined,
 		MailOutlined,
 	},
-	
+
 	setup(){
 		//注册用的表单数据
 		const regForm = reactive({
@@ -23,95 +23,82 @@ export default defineComponent({
 			password:'',
 			inviteCode:'',
 		});
-		
+
 		//注册逻辑
 		const register = async() => {
-			// console.log(regForm)
-			
 			if (regForm.account === '') {
-				message.info('请输入账户');
- 				return;
- 			}
- 			
- 			 if (regForm.password === '') {
- 				message.info('请输入密码');
- 				return;
+			      message.info('请输入账户');
+			        return;
+			      }
+
+			if (regForm.password === '') {
+          message.info('请输入密码');
+			    return;
 			}
-			
-			 if (regForm.inviteCode === '') {
-				message.info('请输入邀请码');
-				return;
+
+			if (regForm.inviteCode === '') {
+			    message.info('请输入邀请码');
+			        return;
 			}
+
+
 			
-			//优化:
 			 const res = await auth.register(
 					regForm.account,
 					regForm.password,
-					regForm.inviteCode,
+          regForm.inviteCode,
 			);
-			
+
 			result(res)
 				.success((data) => {
 					  message.success(data.msg);
 				});
-				
-				
-					
-			
+
+
+
+
 			//const{data} = await auth.login(loginForm.account, loginForm.password)
-			
+
 			//const {data} = await auth.register(loginForm.account, loginForm.password)
-			
+
 // 			if(data.code ){
 // 				message.success(data.message);
-// 				
+//
 // 				return;
-// 				
+//
 // 			}
-// 			
+//
 // 			message.error(data.msg);
-			
+
 		};
-		
-		//登录用的表单数据
-		 const loginForm = reactive({
-		  account: '',
-		  password: '',
-		});
-		
-		//登录逻辑
-		const login = async () => {
-			
-// 			if(loginForm.account === ''){
-// 				message.info('请输入账户');
-// 				return;
-// 			}
-// 			
-// 			if(loginForm.password === ''){
-// 				message.info('请输入密码');
-// 				return;
-// 			}
-			
-			const res = await auth.login(loginForm.account , loginForm.password);
-			
-			result(res)
-				.success((data) => {
-					message.success(data.msg)
-				})
-			// const {data} = await auth.login(loginForm.account , loginForm.password)
-			
-// 			if(data.code) {
-// 				
-// 				message.success(data.msg);
-// 				
-// 				return;
-// 				
-// 			}
-// 			
-// 			message.error(data.msg);
-			
-		};
-		
+
+ // 登入用的表单数据
+    const loginForm = reactive({
+          account: '',
+          password: '',
+    });
+
+// 登入逻辑
+		  const login = async () => {
+		      if (loginForm.account === '') {
+		        message.info('请输入账户');
+		        return;
+		      }
+
+		      if (loginForm.password === '') {
+		        message.info('请输入密码');
+		        return;
+		      }
+
+      const res = await auth.login(loginForm.account, loginForm.password)
+
+      result(res)
+        .success((data) => {
+            message.success(data.msg);
+        });
+
+    };
+
 		 return {
 		  // 注册相关的数据
 		  regForm,
@@ -121,8 +108,8 @@ export default defineComponent({
 		  login,
 		  loginForm,
 
-		  
+
 		};
-		
+
 	},
 });
