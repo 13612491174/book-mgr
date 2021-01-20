@@ -2,6 +2,10 @@ const mongoose = require('mongoose');
 
 require('./Schema/User');
 
+require('./Schema/InviteCode');
+
+require('./Schema/Book');
+
 //1.给哪个数据库的
 
 //Schema:映射MongoDB下的一个集合，并且它的内容就是集合下文档构成
